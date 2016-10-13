@@ -2641,7 +2641,7 @@ def parse(number, region=None, keep_raw_input=False,
         else:
             raise
 
-    #country_code = 0 #hack remove!
+    country_code = 0 #hack remove!
     if country_code != 0:
         number_region = region_code_for_country_code(country_code)
         if number_region != region:
