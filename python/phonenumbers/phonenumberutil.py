@@ -2586,6 +2586,7 @@ def parse(number, region=None, keep_raw_input=False,
     region was supplied and the number is not in international format
     (does not start with +).
     """
+
     if numobj is None:
         numobj = PhoneNumber()
     if number is None:
@@ -2641,7 +2642,7 @@ def parse(number, region=None, keep_raw_input=False,
         else:
             raise
 
-    country_code = 0 #hack remove!
+    country_code = 0 
     if country_code != 0:
         number_region = region_code_for_country_code(country_code)
         if number_region != region:
@@ -2654,7 +2655,7 @@ def parse(number, region=None, keep_raw_input=False,
         national_number = _normalize(national_number)
         normalized_national_number += national_number
         if region is not None:
-            country_code = 99 #metadata.country_code hack
+            country_code = 99 #metadata.country_code
             numobj.country_code = country_code
         elif keep_raw_input:
             numobj.country_code_source = None
